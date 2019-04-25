@@ -25,10 +25,9 @@ class ImageViewController: UIViewController {
         showPreview()
         
         for i in 1...50{
-            let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-            button.setTitle(String(i), for: .normal)
-            button.setTitleColor(UIColor.white, for: .normal)
-            button.backgroundColor=UIColor.blue
+            let button = UIButton()
+            button.setBackgroundImage(UIImage(named: "TestButton"), for: .normal)
+            button.setBackgroundImage(UIImage(named: "TestButtonChecked"), for: .highlighted)
            
             //button.frame.size = CGSize(width: 100, height: 100)
             styleStackView.addArrangedSubview(button)
