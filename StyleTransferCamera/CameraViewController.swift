@@ -125,6 +125,16 @@ class CameraViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        sessionQueue.async {
+            if self.setupResult == .success {
+                self.session.stopRunning()
+                self.isSessionRunning = self.session.isRunning
+            }
+        }
+        
+        super.viewWillDisappear(animated)
+    }
     
     private func configureCamera(){
 
